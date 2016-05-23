@@ -1,0 +1,30 @@
+<div class="col-md-10 col-md-offset-1">
+  <div class="panel panel-default">
+    <div class="panel-body">
+    <!-- begin movie internal row -->
+      <div class="row">
+        <div class="col-md-3 col-xs-12 thumbnail">
+          <img src="images/800x800.png" alt="movie image">
+        </div>
+        <div class="col-md-9 col-xs-12">
+          <ul class="list-group form-inline">
+            <li class="list-group-item">
+              <h4 class="inline-header">movie Name:</h4>
+              <span ng-hide='editing'><a ng-href="{{movie._id}}">{{moviesShowCtrl.movie.title}}</a></span>
+              <input ng-show="editing" ng-model="moviesShowCtrl.movie.name" type="text" class="form-control input-md">
+            </li>
+            <li class="list-group-item">
+              <h4 class="inline-header">Director:</h4>
+              <span ng-hide='editing'>{{moviesShowCtrl.movie.director}}</span>
+              <input ng-show="editing" ng-model="moviesShowCtrl.movie.artistName" type="text" class="form-control input-md">
+            </li>
+          </ul>
+          <button class='btn btn-danger' ng-click="moviesShowCtrl.deleteMovie(movie)">Delete movie</button>
+          <button class='btn btn-info' ng-hide="editing" ng-click="editing = true">Edit movie</button>
+          <button class='btn btn-success' ng-show="editing" ng-click="moviesShowCtrl.editMovie(movie); editing = false">Save Changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>

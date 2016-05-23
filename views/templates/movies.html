@@ -1,0 +1,10 @@
+<div class="container" ng-controller="MoviesIndexController as MoviesIndexCtrl">
+<form ng-submit="MoviesIndexCtrl.createMovie()">
+<input type="text" class="form-control" placeholder="New movie title" ng-model="MoviesIndexCtrl.newMovie.title">
+<input type="text" class="form-control" placeholder="New movie director" ng-model="MoviesIndexCtrl.newMovie.director">
+<button type='submit' class='btn btn-danger'>Submit</button>
+  <div class="row" ng-repeat="movie in MoviesIndexCtrl.movies">
+    <span ng-hide='editing'><a ng-href="{{movie._id}}">{{movie.title}}</a></span>
+    Director:{{movie.director}}<br>
+  </div>
+</div>
