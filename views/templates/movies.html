@@ -5,6 +5,11 @@
 <button type='submit' class='btn btn-danger'>Submit</button>
   <div class="row" ng-repeat="movie in MoviesIndexCtrl.movies">
     <span ng-hide='editing'><a ng-href="{{movie._id}}">{{movie.title}}</a></span>
-    Director:{{movie.director}}<br>
+    <span ng-hide='editing'>{{movie.director}}</span>
+    <input ng-show="editing" ng-model="MoviesIndexCtrl.movie.title" type="text" class="form-control input-md">
+    <input ng-show="editing" ng-model="MoviesIndexCtrl.movie.director" type="text" class="form-control input-md">
+    <button class='btn btn-danger' ng-click="MoviesIndexCtrl.deleteMovie(movie)">Delete Movie</button>
+    <button class='btn btn-info' ng-hide="editing" ng-click="editing = true">Edit Movie</button>
+    <button class='btn btn-success' ng-show="editing" ng-click="MoviesIndexCtrl.editMovie(movie); editing = false">Save Changes</button>
   </div>
 </div>

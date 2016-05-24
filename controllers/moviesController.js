@@ -46,7 +46,8 @@ function update(req, res) {
     foundMovie.director = req.body.director;
     foundMovie.save(function(err, savedMovie) {
       if(err) { console.log('saving altered movie failed'); }
-      res.json(savedMoive);
+      res.json(savedMovie);
+      console.log(saveMovie);
     });
   });
 
